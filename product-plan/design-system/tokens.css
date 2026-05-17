@@ -1,0 +1,53 @@
+/* Design Tokens — Family to Family */
+/* Ukrainian-soul palette using oklch() for perceptually uniform colors */
+
+:root {
+  /* ── Brand Colors ── */
+  --color-blue:        oklch(0.42 0.175 260);   /* Ukrainian blue — primary actions, links, header */
+  --color-blue-deep:   oklch(0.30 0.14 260);    /* Hover/pressed state for blue */
+  --color-blue-faint:  oklch(0.96 0.022 258);   /* Blue-tinted backgrounds */
+
+  --color-coral:       oklch(0.68 0.20 24);     /* Warm coral — submit, donate, CTAs */
+  --color-coral-deep:  oklch(0.55 0.20 24);     /* Hover state for coral */
+
+  --color-gold:        oklch(0.83 0.18 88);     /* Sunflower gold — secondary highlights */
+  --color-gold-deep:   oklch(0.62 0.15 88);     /* Deeper gold for text/borders */
+
+  --color-navy:        oklch(0.18 0.055 261);   /* Deep navy — primary text */
+  --color-cream:       oklch(0.985 0.012 75);   /* Warm cream — page backgrounds */
+
+  /* ── Neutrals ── */
+  --color-muted:       oklch(0.55 0.07 258);    /* Secondary text */
+  --color-border:      oklch(0.91 0.025 258);   /* Borders, dividers */
+  --color-muted-bg:    oklch(0.94 0.025 258);   /* Muted backgrounds */
+
+  /* ── Semantic ── */
+  --color-green:       oklch(0.42 0.14 155);    /* Success / approved */
+  --color-green-faint: oklch(0.93 0.08 155);    /* Success background */
+
+  /* ── Per-Category Colors ── */
+  /* disability (Ukrainian blue) */
+  --color-disability-solid: oklch(0.42 0.175 260);
+  --color-disability-faint: oklch(0.96 0.022 258);
+
+  /* died (warm coral) */
+  --color-died-solid:  oklch(0.68 0.20 24);
+  --color-died-faint:  oklch(0.97 0.018 28);
+
+  /* missing (deep teal) */
+  --color-missing-solid: oklch(0.50 0.13 205);
+  --color-missing-faint: oklch(0.95 0.022 200);
+
+  /* active (sunflower gold) */
+  --color-active-solid: oklch(0.83 0.18 88);
+  --color-active-faint: oklch(0.97 0.025 85);
+
+  /* ── Typography ── */
+  --font-primary: 'DM Sans', system-ui, sans-serif;
+
+  /* ── Radius ── */
+  --radius-sm:  0.75rem;   /* 12px — inputs, tags */
+  --radius-md:  1rem;      /* 16px — cards */
+  --radius-lg:  1.5rem;    /* 24px — modals, panels */
+  --radius-full: 9999px;   /* pills, buttons */
+}

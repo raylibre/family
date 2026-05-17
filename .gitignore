@@ -21,3 +21,7 @@ dist/
 # Logs
 *.log
 npm-debug.log*
+.vercel
+
+# Windows metadata
+*:Zone.Identifier

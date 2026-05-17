@@ -4,12 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Design OS - Refined Utility Design System
-  A professional, editorial-inspired aesthetic with warm neutrals
-  Using Tailwind's stone palette for warmth
+  Design OS - Family to Family
+  Warm, vibrant, Ukrainian-hearted design system.
+  Anchored in Ukrainian blue and sunflower gold,
+  with coral warmth, rounded shapes, and emotional energy.
+  Photos of families and children are first-class design elements.
 */
 @theme {
-  /* Font families - DM Sans for clean, geometric type */
+  /* DM Sans — clean, modern, friendly geometric type */
   --font-display: "DM Sans", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
@@ -21,7 +23,7 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 6px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -56,97 +58,141 @@
 }
 
 /*
-  Light theme - Warm Stone palette
-  Professional, editorial aesthetic with warmth
+  Light theme — Warm cream base, Ukrainian blue primary, sunflower gold secondary
 */
 :root {
-  --radius: 0.5rem;
-  /* Backgrounds & Foregrounds - Stone palette for warmth */
-  --background: oklch(0.985 0.001 106.424); /* stone-50 #FAFAF9 */
-  --foreground: oklch(0.216 0.006 56.043); /* stone-900 #1C1917 */
-  --card: oklch(1 0 0); /* white */
-  --card-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  --popover: oklch(1 0 0); /* white */
-  --popover-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  /* Primary - Stone dark */
-  --primary: oklch(0.216 0.006 56.043); /* stone-900 */
-  --primary-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  /* Secondary - Stone light */
-  --secondary: oklch(0.970 0.001 106.424); /* stone-100 */
-  --secondary-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  /* Muted - Stone for subdued text */
-  --muted: oklch(0.970 0.001 106.424); /* stone-100 */
-  --muted-foreground: oklch(0.444 0.011 73.639); /* stone-600 #57534E */
-  /* Accent - Lime green for subtle pops */
-  --accent: oklch(0.970 0.001 106.424); /* stone-100 */
-  --accent-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  /* Destructive - Rose */
-  --destructive: oklch(0.586 0.253 17.585); /* rose-600 */
-  /* Borders & Inputs - Stone very light */
-  --border: oklch(0.923 0.003 48.717); /* stone-200 #E7E5E4 */
-  --input: oklch(0.923 0.003 48.717); /* stone-200 */
-  --ring: oklch(0.553 0.013 58.071); /* stone-500 */
-  /* Chart colors */
-  --chart-1: oklch(0.532 0.157 131.589); /* lime-600 #65A30D */
-  --chart-2: oklch(0.6 0.118 184.704); /* teal-600 */
-  --chart-3: oklch(0.398 0.07 227.392); /* cyan-800 */
-  --chart-4: oklch(0.828 0.189 84.429); /* yellow-400 */
-  --chart-5: oklch(0.769 0.188 70.08); /* amber-400 */
-  /* Sidebar - Stone */
-  --sidebar: oklch(0.985 0.001 106.424); /* stone-50 */
-  --sidebar-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  --sidebar-primary: oklch(0.216 0.006 56.043); /* stone-900 */
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  --sidebar-accent: oklch(0.970 0.001 106.424); /* stone-100 */
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  --sidebar-border: oklch(0.923 0.003 48.717); /* stone-200 */
-  --sidebar-ring: oklch(0.553 0.013 58.071); /* stone-500 */
+  --radius: 0.75rem; /* friendlier, warmer corners than the default 0.5rem */
+
+  /* Backgrounds — warm cream, not cold white */
+  --background: oklch(0.985 0.012 75);   /* warm cream #FFF9F2 */
+  --foreground: oklch(0.18 0.055 261);   /* deep navy #0F1E3D */
+
+  /* Cards — pure warm white */
+  --card: oklch(1 0.005 75);             /* warm white */
+  --card-foreground: oklch(0.18 0.055 261);
+
+  --popover: oklch(1 0.005 75);
+  --popover-foreground: oklch(0.18 0.055 261);
+
+  /* Primary — Ukrainian blue */
+  --primary: oklch(0.42 0.175 260);      /* deep national blue #0057B8 */
+  --primary-foreground: oklch(1 0 0);    /* white */
+
+  /* Secondary — Sunflower gold */
+  --secondary: oklch(0.83 0.18 88);      /* warm sunflower yellow #F5C500 */
+  --secondary-foreground: oklch(0.18 0.055 261); /* deep navy on yellow */
+
+  /* Muted — soft blue-tinted gray */
+  --muted: oklch(0.94 0.025 258);        /* light blue-gray */
+  --muted-foreground: oklch(0.48 0.07 258); /* medium blue-gray */
+
+  /* Accent — warm coral, human connection */
+  --accent: oklch(0.68 0.20 24);         /* warm coral #FF6B5B */
+  --accent-foreground: oklch(1 0 0);     /* white */
+
+  /* Destructive */
+  --destructive: oklch(0.586 0.253 17.585);
+
+  /* Borders & Inputs — subtle blue tint */
+  --border: oklch(0.87 0.03 258);
+  --input: oklch(0.87 0.03 258);
+  --ring: oklch(0.55 0.12 260);
+
+  /* Chart colors — vivid, full-spectrum */
+  --chart-1: oklch(0.68 0.20 24);        /* coral */
+  --chart-2: oklch(0.55 0.16 258);       /* Ukrainian blue (lighter) */
+  --chart-3: oklch(0.83 0.18 88);        /* sunflower */
+  --chart-4: oklch(0.62 0.14 188);       /* teal */
+  --chart-5: oklch(0.65 0.15 295);       /* lavender */
+
+  /* ── Design system named tokens (used by sections) ── */
+  --color-blue:              oklch(0.42 0.175 260);
+  --color-blue-deep:         oklch(0.30 0.14 260);
+  --color-blue-faint:        oklch(0.96 0.022 258);
+  --color-coral:             oklch(0.68 0.20 24);
+  --color-coral-deep:        oklch(0.55 0.20 24);
+  --color-gold:              oklch(0.83 0.18 88);
+  --color-gold-deep:         oklch(0.62 0.15 88);
+  --color-navy:              oklch(0.18 0.055 261);
+  --color-cream:             oklch(0.985 0.012 75);
+  --color-muted-text:        oklch(0.55 0.07 258);
+  --color-border-subtle:     oklch(0.91 0.025 258);
+  --color-muted-bg:          oklch(0.94 0.025 258);
+  --color-green:             oklch(0.42 0.14 155);
+  --color-green-faint:       oklch(0.93 0.08 155);
+  --color-disability-solid:  oklch(0.42 0.175 260);
+  --color-disability-faint:  oklch(0.96 0.022 258);
+  --color-died-solid:        oklch(0.68 0.20 24);
+  --color-died-faint:        oklch(0.97 0.018 28);
+  --color-missing-solid:     oklch(0.50 0.13 205);
+  --color-missing-faint:     oklch(0.95 0.022 200);
+  --color-active-solid:      oklch(0.83 0.18 88);
+  --color-active-faint:      oklch(0.97 0.025 85);
+  --font-primary:            'DM Sans', system-ui, sans-serif;
+  --radius-sm:               0.75rem;
+  --radius-md:               1rem;
+  --radius-lg:               1.5rem;
+  --radius-full:             9999px;
+
+  /* Sidebar — very light blue wash */
+  --sidebar: oklch(0.97 0.015 258);
+  --sidebar-foreground: oklch(0.18 0.055 261);
+  --sidebar-primary: oklch(0.42 0.175 260);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.83 0.18 88);
+  --sidebar-accent-foreground: oklch(0.18 0.055 261);
+  --sidebar-border: oklch(0.87 0.03 258);
+  --sidebar-ring: oklch(0.55 0.12 260);
 }
 
 /*
-  Dark theme - Warm Stone dark palette
+  Dark theme — Deep navy base with vibrant accents
 */
 .dark {
-  /* Backgrounds & Foregrounds - Stone dark */
-  --background: oklch(0.216 0.006 56.043); /* stone-900 #1C1917 */
-  --foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  --card: oklch(0.268 0.007 34.298); /* stone-800 #292524 */
-  --card-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  --popover: oklch(0.268 0.007 34.298); /* stone-800 */
-  --popover-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  /* Primary - Stone light */
-  --primary: oklch(0.923 0.003 48.717); /* stone-200 */
-  --primary-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  /* Secondary - Stone dark */
-  --secondary: oklch(0.318 0.008 43.185); /* stone-700 */
-  --secondary-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  /* Muted - Stone dark */
-  --muted: oklch(0.318 0.008 43.185); /* stone-700 */
-  --muted-foreground: oklch(0.709 0.01 56.259); /* stone-400 #A8A29E */
-  /* Accent - Stone dark */
-  --accent: oklch(0.318 0.008 43.185); /* stone-700 */
-  --accent-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  /* Destructive - Rose lighter for dark mode */
-  --destructive: oklch(0.712 0.194 13.428); /* rose-400 */
-  /* Borders & Inputs - Stone dark */
-  --border: oklch(0.370 0.010 67.558); /* stone-600 */
-  --input: oklch(0.370 0.010 67.558); /* stone-600 */
-  --ring: oklch(0.553 0.013 58.071); /* stone-500 */
-  /* Chart colors - brighter for dark mode */
-  --chart-1: oklch(0.648 0.2 131.684); /* lime-500 */
-  --chart-2: oklch(0.696 0.17 162.48); /* emerald-400 */
-  --chart-3: oklch(0.769 0.188 70.08); /* amber-400 */
-  --chart-4: oklch(0.627 0.265 303.9); /* purple-500 */
-  --chart-5: oklch(0.645 0.246 16.439); /* rose-500 */
-  /* Sidebar - Stone dark */
-  --sidebar: oklch(0.268 0.007 34.298); /* stone-800 */
-  --sidebar-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  --sidebar-primary: oklch(0.648 0.2 131.684); /* lime-500 */
-  --sidebar-primary-foreground: oklch(0.216 0.006 56.043); /* stone-900 */
-  --sidebar-accent: oklch(0.318 0.008 43.185); /* stone-700 */
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.424); /* stone-50 */
-  --sidebar-border: oklch(0.370 0.010 67.558); /* stone-600 */
-  --sidebar-ring: oklch(0.553 0.013 58.071); /* stone-500 */
+  --background: oklch(0.18 0.055 261);   /* deep navy */
+  --foreground: oklch(0.985 0.012 75);   /* warm cream */
+
+  --card: oklch(0.24 0.06 260);          /* slightly lighter navy */
+  --card-foreground: oklch(0.985 0.012 75);
+
+  --popover: oklch(0.24 0.06 260);
+  --popover-foreground: oklch(0.985 0.012 75);
+
+  /* Primary — brighter blue for dark mode */
+  --primary: oklch(0.60 0.155 258);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Secondary — deeper gold */
+  --secondary: oklch(0.70 0.16 88);
+  --secondary-foreground: oklch(0.18 0.055 261);
+
+  --muted: oklch(0.28 0.06 260);
+  --muted-foreground: oklch(0.65 0.07 258);
+
+  --accent: oklch(0.72 0.19 24);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.712 0.194 13.428);
+
+  --border: oklch(0.32 0.07 260);
+  --input: oklch(0.32 0.07 260);
+  --ring: oklch(0.60 0.155 258);
+
+  /* Chart colors — brightened for dark mode */
+  --chart-1: oklch(0.74 0.20 24);        /* coral bright */
+  --chart-2: oklch(0.65 0.16 258);       /* blue bright */
+  --chart-3: oklch(0.88 0.17 88);        /* gold bright */
+  --chart-4: oklch(0.70 0.14 188);       /* teal bright */
+  --chart-5: oklch(0.72 0.15 295);       /* lavender bright */
+
+  --sidebar: oklch(0.22 0.06 260);
+  --sidebar-foreground: oklch(0.985 0.012 75);
+  --sidebar-primary: oklch(0.60 0.155 258);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.70 0.16 88);
+  --sidebar-accent-foreground: oklch(0.18 0.055 261);
+  --sidebar-border: oklch(0.32 0.07 260);
+  --sidebar-ring: oklch(0.60 0.155 258);
 }
 
 /* Base layer styles */
@@ -159,26 +205,22 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-semibold tracking-tight;
+    @apply font-bold tracking-tight;
   }
   code, pre, kbd {
     font-family: var(--font-mono);
   }
 }
 
-/* Subtle page fade-in animation */
+/* Animations */
 @layer utilities {
   .animate-fade-in {
-    animation: fade-in 200ms ease-out;
+    animation: fade-in 250ms ease-out;
   }
 
   @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .animate-collapse-down {
@@ -190,20 +232,28 @@
   }
 
   @keyframes collapse-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-collapsible-content-height);
-    }
+    from { height: 0; }
+    to { height: var(--radix-collapsible-content-height); }
   }
 
   @keyframes collapse-up {
-    from {
-      height: var(--radix-collapsible-content-height);
-    }
-    to {
-      height: 0;
-    }
+    from { height: var(--radix-collapsible-content-height); }
+    to { height: 0; }
+  }
+
+  /* Ukrainian blue section blocks */
+  .bg-brand-blue  { background-color: oklch(0.42 0.175 260); }
+  .bg-brand-gold  { background-color: oklch(0.83 0.18 88); }
+  .bg-brand-coral { background-color: oklch(0.68 0.20 24); }
+
+  /* Photo frame shapes */
+  .photo-blob {
+    clip-path: ellipse(48% 50% at 52% 50%);
+  }
+  .photo-circle {
+    border-radius: 50%;
+  }
+  .photo-arch {
+    border-radius: 999px 999px 0.75rem 0.75rem;
   }
 }

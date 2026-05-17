@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "models": {
+      "familyCategory": "One of four family situations that a registering family must identify with. The selected category helps the platform route support appropriately.",
+      "uvrInfo": "Information about the UVR (Ukrainian Military Movement) registration requirement, including the URL to their site and bilingual text for the popup."
+    },
+    "relationships": [
+      "A family must select exactly one familyCategory before they can proceed to sign in",
+      "The uvrInfo content is displayed in the modal popup — first to prompt UVR registration, then as context on the sign-in tab"
+    ]
+  },
+  "categories": [
+    {
+      "id": "disability",
+      "title": {
+        "uk": "Батько повернувся з фронту з інвалідністю",
+        "en": "A parent returned from the front line with a disability"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків отримав поранення або інвалідність під час служби на передовій.",
+        "en": "Families where a parent was wounded or disabled during active service at the front line."
+      }
+    },
+    {
+      "id": "died",
+      "title": {
+        "uk": "Батько загинув",
+        "en": "A parent died in the line of duty"
+      },
+      "description": {
+        "uk": "Сім'ї, які втратили одного з батьків під час захисту України.",
+        "en": "Families who have lost a parent while defending Ukraine."
+      }
+    },
+    {
+      "id": "missing",
+      "title": {
+        "uk": "Батько зник безвісти",
+        "en": "A parent is missing in action"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків вважається зниклим безвісти після служби або бойових дій.",
+        "en": "Families where a parent has been listed as missing following service or combat."
+      }
+    },
+    {
+      "id": "active",
+      "title": {
+        "uk": "Батько зараз на передовій",
+        "en": "A parent is currently serving at the front line"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків наразі проходить службу на нульовій лінії фронту.",
+        "en": "Families where a parent is currently deployed at the zero line."
+      }
+    }
+  ],
+  "uvrInfo": {
+    "url": "https://uvr.com.ua",
+    "registerTab": {
+      "uk": "Реєстрація",
+      "en": "Register at UVR"
+    },
+    "signInTab": {
+      "uk": "Увійти",
+      "en": "Sign In"
+    },
+    "registerHeading": {
+      "uk": "Спочатку зареєструйтесь на сайті УВР",
+      "en": "First, register on the UVR website"
+    },
+    "registerBody": {
+      "uk": "Щоб отримати доступ до платформи «Сім'я до Сім'ї», ваша сім'я повинна бути зареєстрована в Українському Військовому Русі (УВР). Після реєстрації ви отримаєте унікальний код та підтвердження на електронну пошту.",
+      "en": "To access the Family to Family platform, your family must first be registered with the Ukrainian Military Movement (UVR). After registering, you will receive a unique code and a confirmation to your email address."
+    },
+    "registerCTA": {
+      "uk": "Перейти на сайт УВР",
+      "en": "Go to the UVR website"
+    },
+    "signInHeading": {
+      "uk": "Увійдіть за допомогою коду УВР",
+      "en": "Sign in with your UVR code"
+    },
+    "signInBody": {
+      "uk": "Введіть email, який ви використовували при реєстрації на УВР, та унікальний код, який ви отримали.",
+      "en": "Enter the email you used when registering with UVR and the unique code you received."
+    },
+    "emailLabel": {
+      "uk": "Електронна пошта",
+      "en": "Email address"
+    },
+    "codeLabel": {
+      "uk": "Код УВР",
+      "en": "UVR code"
+    },
+    "submitLabel": {
+      "uk": "Увійти",
+      "en": "Sign In"
+    },
+    "errorMessage": {
+      "uk": "Невірний код або email. Перевірте дані та спробуйте ще раз.",
+      "en": "Invalid code or email. Please check your details and try again."
+    }
+  },
+  "content": {
+    "uk": {
+      "pageTitle": "Ваша сім'я потребує допомоги?",
+      "pageSubtitle": "Оберіть ситуацію, яка відповідає вашій сім'ї",
+      "continueButton": "Продовжити",
+      "languageToggle": "EN",
+      "modalTitle": "Реєстрація сім'ї"
+    },
+    "en": {
+      "pageTitle": "Does your family need support?",
+      "pageSubtitle": "Choose the situation that best describes your family",
+      "continueButton": "Continue",
+      "languageToggle": "UA",
+      "modalTitle": "Family Registration"
+    }
+  }
+}

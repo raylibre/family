@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "models": {
+      "hero": "The primary trust figure shown on the landing page — a politician or public figure who lends credibility to the platform.",
+      "partner": "An organization partnered with Family to Family, displayed as a full-height logo column beside the hero photo. Family to Family itself appears in the page header, not here.",
+      "content": "All translatable text strings for the landing page, keyed by language (uk / en)."
+    },
+    "relationships": [
+      "The hero row displays the hero photo (3 parts) alongside two partner logo columns (1 part each)",
+      "Content strings are keyed by locale and used to render all visible text including button labels and the mission statement"
+    ]
+  },
+  "hero": {
+    "name": {
+      "uk": "Михайло Прісяжнюк",
+      "en": "Mykhailo Prisiazhniuk"
+    },
+    "title": {
+      "uk": "Народний депутат України",
+      "en": "Member of Parliament of Ukraine"
+    },
+    "photo": "/images/prisiazhniuk.jpg"
+  },
+  "partners": [
+    {
+      "id": "children-victims",
+      "name": {
+        "uk": "Благодійна організація «Діти — Жертви Війни»",
+        "en": "Charitable Foundation «Children — Victims of the War»"
+      },
+      "logo": "/logos/children-victims-of-war.png",
+      "url": "https://children-victims.org.ua"
+    },
+    {
+      "id": "uvr",
+      "name": {
+        "uk": "Українське Волонтерське Рух (УВР)",
+        "en": "Ukrainian Military Movement (UMM)"
+      },
+      "logo": "/logos/uvr.png",
+      "url": "https://uvr.org.ua"
+    }
+  ],
+  "content": {
+    "uk": {
+      "missionLine1": "Програма «Сім'я до Сім'ї» допомагає лише сім'ям українських військових,",
+      "missionLine2": "чий батько, мати або син служив на нульовій лінії фронту.",
+      "ctaFamily": "Нам потрібна допомога",
+      "ctaDonor": "Я хочу допомогти",
+      "languageToggle": "EN"
+    },
+    "en": {
+      "missionLine1": "The Family to Family program supports only the families of Ukrainian military soldiers",
+      "missionLine2": "whose father, mother, or son served on the front line.",
+      "ctaFamily": "We Need Help",
+      "ctaDonor": "I Want to Help",
+      "languageToggle": "UA"
+    }
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "_meta": {
+    "models": {
+      "adminUser": "A platform administrator with login credentials.",
+      "pendingFamily": "A family CV submitted by a registered family awaiting admin review before going public.",
+      "approvedFamily": "A family CV that has been reviewed and approved — visible on the public donor browse page.",
+      "pendingDonation": "A donation record submitted by a donor after completing a direct bank transfer, awaiting admin approval before updating the family jar.",
+      "dashboardStats": "Aggregate counts shown on the admin dashboard summary cards."
+    },
+    "relationships": [
+      "pendingFamily and approvedFamily share the same shape — status differentiates them",
+      "pendingDonation references a family by familyId and familyName",
+      "dashboardStats are computed from the other entities"
+    ]
+  },
+
+  "adminUser": {
+    "id": "admin-001",
+    "name": "Олена Бондаренко",
+    "email": "admin@familytofamily.org",
+    "role": "admin",
+    "avatarInitials": "ОБ"
+  },
+
+  "dashboardStats": {
+    "pendingFamiliesCount": 4,
+    "pendingDonationsCount": 7,
+    "totalActiveFamilies": 23,
+    "approvedDonationsThisMonth": 41
+  },
+
+  "families": [
+    {
+      "id": "fam-001",
+      "familyName": "Родина Ковальчук",
+      "categoryId": "disability",
+      "status": "pending",
+      "submittedAt": "2026-05-14T09:22:00Z",
+      "uvrCode": "UVR-4821-JKPQ",
+      "userEmail": "kovalchuk.m@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1588776814546-ec7e1e25d7e4?w=400&h=300&fit=crop",
+      "story": "Мій чоловік Сергій отримав важке поранення в районі Бахмута у серпні 2024 року. Після шести місяців лікування він повернувся додому, але потребує постійної реабілітації. У нас двоє дітей — 7 і 11 років. Я не можу повноцінно працювати, доглядаючи за чоловіком. Нам дуже потрібна допомога з оплатою житла та продуктами.",
+      "memberName": "Сергій Ковальчук",
+      "memberRank": "Старший сержант",
+      "frontLineConfirmed": true,
+      "children": [
+        { "id": "c1", "age": "7" },
+        { "id": "c2", "age": "11" }
+      ],
+      "selectedNeeds": ["housing", "groceries", "rehabilitation"],
+      "customNeed": "",
+      "monthlyTarget": 350,
+      "currentlyFunded": 0,
+      "rejectionNote": null
+    },
+    {
+      "id": "fam-002",
+      "familyName": "Родина Мельник",
+      "categoryId": "died",
+      "status": "pending",
+      "submittedAt": "2026-05-13T14:05:00Z",
+      "uvrCode": "UVR-3317-BXMN",
+      "userEmail": "melnyk.o@ukr.net",
+      "photo": "",
+      "story": "Мій чоловік Андрій загинув під Авдіївкою в лютому 2025 року. Він залишив нас із трьома маленькими дітьми. Старшому 9, середній 5, молодшій лише 2 роки. Я намагаюся впоратися сама, але фінансово дуже важко. Потребую допомоги з шкільними витратами та одягом для дітей.",
+      "memberName": "Андрій Мельник",
+      "memberRank": "Молодший лейтенант",
+      "frontLineConfirmed": true,
+      "children": [
+        { "id": "c1", "age": "9" },
+        { "id": "c2", "age": "5" },
+        { "id": "c3", "age": "2" }
+      ],
+      "selectedNeeds": ["school", "clothing", "groceries"],
+      "customNeed": "Велосипед для старшого сина",
+      "monthlyTarget": 280,
+      "currentlyFunded": 0,
+      "rejectionNote": null
+    },
+    {
+      "id": "fam-003",
+      "familyName": "Родина Шевченко",
+      "categoryId": "missing",
+      "status": "pending",
+      "submittedAt": "2026-05-12T08:47:00Z",
+      "uvrCode": "UVR-7744-RZPT",
+      "userEmail": "shevchenko.n@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=400&h=300&fit=crop",
+      "story": "Мій чоловік Василь зник безвісти у Запорізькій області в жовтні 2024. Ми досі не маємо жодних підтверджень. Живу в невизначеності разом із донькою 6 років. Знімаємо квартиру і намагаємося тримати нормальний побут, але коштів не вистачає.",
+      "memberName": "Василь Шевченко",
+      "memberRank": "Сержант",
+      "frontLineConfirmed": false,
+      "children": [
+        { "id": "c1", "age": "6" }
+      ],
+      "selectedNeeds": ["housing", "medical", "psychology"],
+      "customNeed": "",
+      "monthlyTarget": 200,
+      "currentlyFunded": 0,
+      "rejectionNote": null
+    },
+    {
+      "id": "fam-004",
+      "familyName": "Родина Бойко",
+      "categoryId": "active",
+      "status": "pending",
+      "submittedAt": "2026-05-11T17:33:00Z",
+      "uvrCode": "UVR-2205-LKWV",
+      "userEmail": "boiko.t@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop",
+      "story": "Чоловік Ігор зараз служить на передовій у Харківській області. Ми з двома синами залишилися у Вінниці. Я працюю, але одного зарплатні не вистачає. Хлопчики 8 і 13 років, потребують нормального харчування і шкільного приладдя.",
+      "memberName": "Ігор Бойко",
+      "memberRank": "Старший солдат",
+      "frontLineConfirmed": true,
+      "children": [
+        { "id": "c1", "age": "8" },
+        { "id": "c2", "age": "13" }
+      ],
+      "selectedNeeds": ["groceries", "school"],
+      "customNeed": "",
+      "monthlyTarget": 230,
+      "currentlyFunded": 0,
+      "rejectionNote": null
+    },
+    {
+      "id": "fam-005",
+      "familyName": "Родина Петренко",
+      "categoryId": "disability",
+      "status": "approved",
+      "submittedAt": "2026-05-02T10:15:00Z",
+      "uvrCode": "UVR-1198-AQDT",
+      "userEmail": "petrenko.l@ukr.net",
+      "photo": "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=400&h=300&fit=crop",
+      "story": "Олексій втратив ногу в боях під Херсоном. Повернувся додому в листопаді 2024. Ми з донькою 4 роки доглядаємо його разом. Йому потрібна дорога реабілітація та протез. Без сторонньої допомоги ми не впораємося.",
+      "memberName": "Олексій Петренко",
+      "memberRank": "Капрал",
+      "frontLineConfirmed": true,
+      "children": [
+        { "id": "c1", "age": "4" }
+      ],
+      "selectedNeeds": ["rehab", "medical", "housing"],
+      "customNeed": "",
+      "monthlyTarget": 420,
+      "currentlyFunded": 185,
+      "rejectionNote": null
+    },
+    {
+      "id": "fam-006",
+      "familyName": "Родина Іваненко",
+      "categoryId": "died",
+      "status": "approved",
+      "submittedAt": "2026-04-28T13:00:00Z",
+      "uvrCode": "UVR-8834-MNPX",
+      "userEmail": "ivanenko.k@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=300&fit=crop",
+      "story": "Мій чоловік Микола загинув у бою за Маріуполь. Виховую двох дітей самотужки. Старшому 12 років, молодшій 8. Намагаємось жити далі — потребуємо підтримки з продуктами та шкільними витратами.",
+      "memberName": "Микола Іваненко",
+      "memberRank": "Лейтенант",
+      "frontLineConfirmed": true,
+      "children": [
+        { "id": "c1", "age": "12" },
+        { "id": "c2", "age": "8" }
+      ],
+      "selectedNeeds": ["groceries", "school", "clothing"],
+      "customNeed": "",
+      "monthlyTarget": 260,
+      "currentlyFunded": 260,
+      "rejectionNote": null
+    },
+    {
+      "id": "fam-007",
+      "familyName": "Родина Гриценко",
+      "categoryId": "active",
+      "status": "rejected",
+      "submittedAt": "2026-05-05T09:10:00Z",
+      "uvrCode": "UVR-5501-YZTK",
+      "userEmail": "hrytsenko.v@ukr.net",
+      "photo": "",
+      "story": "Короткий опис без деталей.",
+      "memberName": "Дмитро Гриценко",
+      "memberRank": "",
+      "frontLineConfirmed": false,
+      "children": [],
+      "selectedNeeds": ["groceries"],
+      "customNeed": "",
+      "monthlyTarget": 100,
+      "currentlyFunded": 0,
+      "rejectionNote": "Недостатньо інформації для верифікації. Будь ласка, доповніть профіль: вкажіть звання, підтвердіть перебування на передовій та додайте детальнішу історію."
+    },
+    {
+      "id": "fam-008",
+      "familyName": "Родина Лисенко",
+      "categoryId": "disability",
+      "status": "archived",
+      "submittedAt": "2026-03-15T11:20:00Z",
+      "uvrCode": "UVR-0099-FGHJ",
+      "userEmail": "lysenko.a@gmail.com",
+      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop",
+      "story": "Архівована родина — підтримка більше не потрібна.",
+      "memberName": "Артем Лисенко",
+      "memberRank": "Рядовий",
+      "frontLineConfirmed": true,
+      "children": [
+        { "id": "c1", "age": "10" }
+      ],
+      "selectedNeeds": ["housing"],
+      "customNeed": "",
+      "monthlyTarget": 150,
+      "currentlyFunded": 150,
+      "rejectionNote": null
+    }
+  ],
+
+  "donations": [
+    {
+      "id": "don-001",
+      "familyId": "fam-005",
+      "familyName": "Родина Петренко",
+      "donorName": "Марія Соколова",
+      "donorEmail": "sokolova.m@gmail.com",
+      "amount": 50,
+      "currency": "USD",
+      "status": "pending",
+      "submittedAt": "2026-05-15T08:30:00Z",
+      "note": "Сподіваюся, що це допоможе вашій родині. Тримайтеся!",
+      "proofScreenshot": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "don-002",
+      "familyId": "fam-006",
+      "familyName": "Родина Іваненко",
+      "donorName": "Тарас Яковенко",
+      "donorEmail": "yakovenko.t@ukr.net",
+      "amount": 100,
+      "currency": "USD",
+      "status": "pending",
+      "submittedAt": "2026-05-15T09:12:00Z",
+      "note": "",
+      "proofScreenshot": ""
+    },
+    {
+      "id": "don-003",
+      "familyId": "fam-005",
+      "familyName": "Родина Петренко",
+      "donorName": "Анна Мороз",
+      "donorEmail": "moroz.a@gmail.com",
+      "amount": 35,
+      "currency": "USD",
+      "status": "pending",
+      "submittedAt": "2026-05-14T16:45:00Z",
+      "note": "Для лікування — від щирого серця.",
+      "proofScreenshot": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "don-004",
+      "familyId": "fam-006",
+      "familyName": "Родина Іваненко",
+      "donorName": "Олексій Савченко",
+      "donorEmail": "savchenko.o@ukr.net",
+      "amount": 260,
+      "currency": "USD",
+      "status": "pending",
+      "submittedAt": "2026-05-14T11:20:00Z",
+      "note": "Повна сума на місяць. Слава Україні!",
+      "proofScreenshot": ""
+    },
+    {
+      "id": "don-005",
+      "familyId": "fam-005",
+      "familyName": "Родина Петренко",
+      "donorName": "Катерина Лук'яненко",
+      "donorEmail": "lukianenko.k@gmail.com",
+      "amount": 100,
+      "currency": "USD",
+      "status": "approved",
+      "submittedAt": "2026-05-10T10:00:00Z",
+      "note": "",
+      "proofScreenshot": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "don-006",
+      "familyId": "fam-005",
+      "familyName": "Родина Петренко",
+      "donorName": "Іван Кравченко",
+      "donorEmail": "kravchenko.i@ukr.net",
+      "amount": 85,
+      "currency": "USD",
+      "status": "approved",
+      "submittedAt": "2026-05-08T14:30:00Z",
+      "note": "Трохи від нашої сім'ї.",
+      "proofScreenshot": ""
+    },
+    {
+      "id": "don-007",
+      "familyId": "fam-006",
+      "familyName": "Родина Іваненко",
+      "donorName": "Польська волонтерська спільнота",
+      "donorEmail": "volunteers@polska-pomoc.pl",
+      "amount": 200,
+      "currency": "USD",
+      "status": "cancelled",
+      "submittedAt": "2026-05-07T09:00:00Z",
+      "note": "Підозріла заявка — переказ не підтверджено",
+      "proofScreenshot": ""
+    }
+  ],
+
+  "categories": [
+    { "id": "disability", "label": { "uk": "Поранення / інвалідність", "en": "Injury / disability" } },
+    { "id": "died",       "label": { "uk": "Загиблий воїн",           "en": "Fallen soldier" } },
+    { "id": "missing",    "label": { "uk": "Зниклий безвісти",        "en": "Missing in action" } },
+    { "id": "active",     "label": { "uk": "Діючий військовий",       "en": "Active service" } }
+  ]
+}

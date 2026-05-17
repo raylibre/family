@@ -1,0 +1,225 @@
+{
+  "_meta": {
+    "models": {
+      "donorCategory": "One of four family situation categories shown to donors on the browse page. Each category has an approximate monthly support amount that helps donors understand the scale of need.",
+      "family": "A registered and verified military family available for donor support. Tracks the monthly funding target and how much has already been covered by donors this month.",
+      "familyNeed": "A specific item or area of need for a family, shown as a tag on the family card."
+    },
+    "relationships": [
+      "Each family belongs to exactly one donorCategory via categoryId",
+      "Each family has many familyNeeds",
+      "currentlyFunded / monthlyTarget gives the jar fill percentage for a family"
+    ]
+  },
+  "categories": [
+    {
+      "id": "disability",
+      "monthlyAmount": 280,
+      "title": {
+        "uk": "Батько повернувся з фронту з інвалідністю",
+        "en": "A parent returned with a disability"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків отримав поранення або інвалідність під час служби.",
+        "en": "Families where a parent was wounded or disabled during active service."
+      }
+    },
+    {
+      "id": "died",
+      "monthlyAmount": 320,
+      "title": {
+        "uk": "Батько загинув",
+        "en": "A parent died in the line of duty"
+      },
+      "description": {
+        "uk": "Сім'ї, які втратили одного з батьків під час захисту України.",
+        "en": "Families who have lost a parent while defending Ukraine."
+      }
+    },
+    {
+      "id": "missing",
+      "monthlyAmount": 260,
+      "title": {
+        "uk": "Батько зник безвісти",
+        "en": "A parent is missing in action"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків вважається зниклим безвісти.",
+        "en": "Families where a parent has been listed as missing."
+      }
+    },
+    {
+      "id": "active",
+      "monthlyAmount": 220,
+      "title": {
+        "uk": "Батько зараз на передовій",
+        "en": "A parent is currently at the front line"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків наразі проходить службу на нульовій лінії фронту.",
+        "en": "Families where a parent is currently deployed at the zero line."
+      }
+    }
+  ],
+  "families": [
+    {
+      "id": "family-001",
+      "name": "Родина Коваленко",
+      "photo": "/images/families/kovalenko.jpg",
+      "categoryId": "died",
+      "monthlyTarget": 320,
+      "currentlyFunded": 192,
+      "story": {
+        "uk": "Олексій загинув у березні 2024 року під Авдіївкою. Його дружина Марія залишилась сама з трьома дітьми — 4, 8 та 12 років.",
+        "en": "Oleksiy was killed in March 2024 near Avdiivka. His wife Maria was left alone with three children — aged 4, 8, and 12."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Оренда житла", "en": "Housing rent" } },
+        { "id": "n2", "label": { "uk": "Шкільне приладдя", "en": "School supplies" } },
+        { "id": "n3", "label": { "uk": "Продукти харчування", "en": "Groceries" } }
+      ]
+    },
+    {
+      "id": "family-002",
+      "name": "Родина Мельник",
+      "photo": "/images/families/melnyk.jpg",
+      "categoryId": "disability",
+      "monthlyTarget": 280,
+      "currentlyFunded": 280,
+      "story": {
+        "uk": "Василь повернувся з фронту з ампутацією правої руки. Зараз він проходить реабілітацію, а його дружина Оксана виховує двох дітей.",
+        "en": "Vasyl returned from the front line with an amputation of his right arm. He is currently in rehabilitation while his wife Oksana raises two children."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Медична реабілітація", "en": "Medical rehabilitation" } },
+        { "id": "n2", "label": { "uk": "Протез руки", "en": "Prosthetic arm" } }
+      ]
+    },
+    {
+      "id": "family-003",
+      "name": "Родина Шевченко",
+      "photo": "/images/families/shevchenko.jpg",
+      "categoryId": "missing",
+      "monthlyTarget": 260,
+      "currentlyFunded": 0,
+      "story": {
+        "uk": "Андрій зник безвісти у жовтні 2023 року. Його мати Надія виховує його двох дітей, поки чекає новин.",
+        "en": "Andriy went missing in October 2023. His mother Nadiia is raising his two children while waiting for news."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Психологічна підтримка", "en": "Psychological support" } },
+        { "id": "n2", "label": { "uk": "Продукти харчування", "en": "Groceries" } },
+        { "id": "n3", "label": { "uk": "Комунальні послуги", "en": "Utilities" } }
+      ]
+    },
+    {
+      "id": "family-004",
+      "name": "Родина Бондаренко",
+      "photo": "/images/families/bondarenko.jpg",
+      "categoryId": "active",
+      "monthlyTarget": 220,
+      "currentlyFunded": 110,
+      "story": {
+        "uk": "Іван служить на Запорізькому напрямку вже 18 місяців. Його дружина Тетяна виховує доньку 7 років без постійного доходу.",
+        "en": "Ivan has been serving on the Zaporizhzhia front for 18 months. His wife Tetiana is raising their 7-year-old daughter without a steady income."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Дитячий одяг", "en": "Children's clothing" } },
+        { "id": "n2", "label": { "uk": "Оренда житла", "en": "Housing rent" } }
+      ]
+    },
+    {
+      "id": "family-005",
+      "name": "Родина Поліщук",
+      "photo": "/images/families/polishchuk.jpg",
+      "categoryId": "died",
+      "monthlyTarget": 320,
+      "currentlyFunded": 48,
+      "story": {
+        "uk": "Сергій загинув у серпні 2023 року. Його дружина Ірина залишилась з чотирма дітьми від 2 до 14 років у невеликому селі на Херсонщині.",
+        "en": "Serhiy was killed in August 2023. His wife Iryna was left with four children aged 2 to 14 in a small village in the Kherson region."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Продукти харчування", "en": "Groceries" } },
+        { "id": "n2", "label": { "uk": "Медикаменти для дітей", "en": "Children's medicine" } },
+        { "id": "n3", "label": { "uk": "Паливо для обігріву", "en": "Heating fuel" } }
+      ]
+    },
+    {
+      "id": "family-006",
+      "name": "Родина Гриценко",
+      "photo": "/images/families/hrytsenko.jpg",
+      "categoryId": "disability",
+      "monthlyTarget": 280,
+      "currentlyFunded": 196,
+      "story": {
+        "uk": "Микола отримав важку контузію і більше не може працювати. Його дружина Галина доглядає за ним і трьома дітьми одночасно.",
+        "en": "Mykola suffered a severe concussion and can no longer work. His wife Halyna cares for him and their three children simultaneously."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Ліки та лікування", "en": "Medication & treatment" } },
+        { "id": "n2", "label": { "uk": "Шкільне приладдя", "en": "School supplies" } }
+      ]
+    },
+    {
+      "id": "family-007",
+      "name": "Родина Ткаченко",
+      "photo": "/images/families/tkachenko.jpg",
+      "categoryId": "active",
+      "monthlyTarget": 220,
+      "currentlyFunded": 198,
+      "story": {
+        "uk": "Олег служить у морській піхоті. Його мама Людмила виховує його сина-першокласника в орендованій квартирі у Вінниці.",
+        "en": "Oleh serves in the marines. His mother Liudmyla is raising his first-grade son in a rented apartment in Vinnytsia."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Оренда житла", "en": "Housing rent" } }
+      ]
+    },
+    {
+      "id": "family-008",
+      "name": "Родина Савченко",
+      "photo": "/images/families/savchenko.jpg",
+      "categoryId": "missing",
+      "monthlyTarget": 260,
+      "currentlyFunded": 130,
+      "story": {
+        "uk": "Дмитро зник безвісти у травні 2024 року. Його дружина Вікторія самостійно виховує сина з особливими потребами і доньку-підлітка.",
+        "en": "Dmytro went missing in May 2024. His wife Victoria is raising a son with special needs and a teenage daughter on her own."
+      },
+      "needs": [
+        { "id": "n1", "label": { "uk": "Спеціальна освіта", "en": "Special education" } },
+        { "id": "n2", "label": { "uk": "Психологічна підтримка", "en": "Psychological support" } },
+        { "id": "n3", "label": { "uk": "Продукти харчування", "en": "Groceries" } }
+      ]
+    }
+  ],
+  "content": {
+    "uk": {
+      "pageTitle": "Оберіть, кому ви хочете допомогти",
+      "pageSubtitle": "Оберіть категорію сімей або перегляньте всі сім'ї одразу",
+      "perMonth": "/ місяць",
+      "browseButton": "Переглянути сім'ї",
+      "viewAllButton": "Переглянути всі сім'ї",
+      "changeCategory": "← Змінити категорію",
+      "allFamilies": "Всі сім'ї",
+      "covered": "покрито",
+      "fillTheJar": "Заповнити банку",
+      "donateButton": "Підтримати",
+      "languageToggle": "EN"
+    },
+    "en": {
+      "pageTitle": "Choose who you want to support",
+      "pageSubtitle": "Select a family category or browse all families at once",
+      "perMonth": "/ month",
+      "browseButton": "Browse Families",
+      "viewAllButton": "View all families",
+      "changeCategory": "← Change category",
+      "allFamilies": "All families",
+      "covered": "covered",
+      "fillTheJar": "Fill the jar",
+      "donateButton": "Donate",
+      "languageToggle": "UA"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "models": {
+      "partnershipInquiry": "A contact form submission from an NGO, charity, or support organization expressing interest in partnering with the platform.",
+      "supportType": "A predefined category of in-kind support an organization can offer to families.",
+      "widgetContent": "UI copy and labels used in the floating button and partnership modal."
+    },
+    "relationships": [
+      "partnershipInquiry references one or more supportType ids",
+      "widgetContent provides bilingual (uk/en) text for all UI elements"
+    ]
+  },
+
+  "supportTypes": [
+    { "id": "food",        "label": { "uk": "Продукти харчування",    "en": "Food & groceries" } },
+    { "id": "clothing",    "label": { "uk": "Одяг",                   "en": "Clothing" } },
+    { "id": "medical",     "label": { "uk": "Медична допомога",       "en": "Medical care" } },
+    { "id": "school",      "label": { "uk": "Шкільне приладдя",       "en": "School supplies" } },
+    { "id": "psychology",  "label": { "uk": "Психологічна підтримка", "en": "Psychological support" } },
+    { "id": "financial",   "label": { "uk": "Фінансова підтримка",    "en": "Financial support" } },
+    { "id": "other",       "label": { "uk": "Інше",                   "en": "Other" } }
+  ],
+
+  "widgetContent": {
+    "buttonLabel": {
+      "uk": "Стати партнером",
+      "en": "Become a partner"
+    },
+    "modalHeadline": {
+      "uk": "Разом ми можемо більше",
+      "en": "Together we can do more"
+    },
+    "modalSubheadline": {
+      "uk": "Якщо ваша організація може запропонувати допомогу сім'ям — продукти, одяг, медичну допомогу чи інше — залиште свої контакти. Ми зв'яжемося з вами, щоб обговорити партнерство.",
+      "en": "If your organization can offer support to families — food, clothing, medical care, or other essentials — leave your details. We'll reach out to discuss a partnership."
+    },
+    "orgNameLabel":     { "uk": "Назва організації",    "en": "Organization name" },
+    "contactLabel":     { "uk": "Контактна особа",      "en": "Contact person" },
+    "emailLabel":       { "uk": "Email адреса",         "en": "Email address" },
+    "supportTypeLabel": { "uk": "Що ви можете запропонувати?", "en": "What can you offer?" },
+    "messageLabel":     { "uk": "Розкажіть більше",     "en": "Tell us more" },
+    "messagePlaceholder": {
+      "uk": "Опишіть, як ваша організація може допомогти сім'ям та яку кількість сімей ви готові підтримати…",
+      "en": "Describe how your organization can help families and how many families you're ready to support…"
+    },
+    "submitLabel":      { "uk": "Надіслати заявку",     "en": "Send inquiry" },
+    "successHeadline":  { "uk": "Дякуємо за інтерес!",  "en": "Thank you for reaching out!" },
+    "successBody": {
+      "uk": "Ми отримали вашу заявку і надіслали підтвердження на вашу пошту. Наша команда зв'яжеться з вами найближчим часом.",
+      "en": "We've received your inquiry and sent a confirmation to your email. Our team will be in touch with you shortly."
+    },
+    "successClose":     { "uk": "Закрити",              "en": "Close" }
+  },
+
+  "sampleInquiries": [
+    {
+      "id": "inq-001",
+      "orgName": "Польська волонтерська спільнота",
+      "contactPerson": "Анна Ковальська",
+      "email": "anna@polska-pomoc.pl",
+      "supportTypeIds": ["food", "clothing"],
+      "message": "Наша організація щомісяця збирає продуктові набори та дитячий одяг для українських родин. Готові підтримувати до 10 сімей щомісяця.",
+      "submittedAt": "2026-05-10T11:30:00Z"
+    },
+    {
+      "id": "inq-002",
+      "orgName": "Медичний фонд «Здоров'я»",
+      "contactPerson": "Олег Марченко",
+      "email": "o.marchenko@zdravia-fund.org",
+      "supportTypeIds": ["medical", "psychology"],
+      "message": "Фонд надає безкоштовні консультації психолога та часткове відшкодування медичних витрат для сімей загиблих та поранених військових.",
+      "submittedAt": "2026-05-12T09:15:00Z"
+    },
+    {
+      "id": "inq-003",
+      "orgName": "Книгарня «Читайко»",
+      "contactPerson": "Марія Демченко",
+      "email": "mariia@chytaiko.ua",
+      "supportTypeIds": ["school"],
+      "message": "Готові щоквартально передавати шкільне приладдя та книги для дітей шкільного віку.",
+      "submittedAt": "2026-05-14T16:00:00Z"
+    },
+    {
+      "id": "inq-004",
+      "orgName": "Міжнародний благодійний фонд HELP",
+      "contactPerson": "David Schmidt",
+      "email": "d.schmidt@help-foundation.eu",
+      "supportTypeIds": ["financial", "food", "other"],
+      "message": "",
+      "submittedAt": "2026-05-15T08:45:00Z"
+    }
+  ]
+}
