@@ -145,6 +145,14 @@ function PartnerColumn({
         <DotGrid cols={4} rows={4} gap={13} dotSize={2} color={dotsColor} opacity={0.18} />
       </div>
 
+      {/* Section label */}
+      <p
+        className="relative z-10 text-[10px] font-bold uppercase tracking-[0.18em] opacity-60 text-center"
+        style={{ color: textColor }}
+      >
+        Партнери проєкту
+      </p>
+
       {/* Logo container */}
       <div
         className="relative z-10 w-[100px] h-[100px] md:w-[128px] md:h-[128px] rounded-2xl flex items-center justify-center overflow-hidden shadow-md"
@@ -165,7 +173,7 @@ function PartnerColumn({
       {/* Org name */}
       <p
         className="relative z-10 text-center text-xs md:text-sm font-semibold leading-snug max-w-[160px]"
-        style={{ color: textColor }}
+        style={{ color: textColor, whiteSpace: 'pre-line' }}
       >
         {partner.name[locale]}
       </p>
@@ -263,36 +271,41 @@ export function LandingPage({
               >
                 {hero.name[locale]}
               </h1>
+              {hero.subtitle?.[locale] && (
+                <p className="text-white/80 text-xs md:text-sm font-medium leading-snug mt-1">
+                  {hero.subtitle[locale]}
+                </p>
+              )}
             </div>
           </div>
 
-          {/* ── Partner 1 column — Ukrainian blue ── */}
+          {/* ── Partner 1 column — sunflower gold (Фонд) ── */}
           {partner1 && (
             <div className="col-span-1 h-full">
               <PartnerColumn
                 partner={partner1}
-                locale={locale}
-                bgColor={BLUE}
-                textColor="white"
-                accentColor="rgba(255,255,255,0.15)"
-                dotsColor="white"
-                sunflowerColor="white"
-                emojiPlaceholder="🕊️"
-              />
-            </div>
-          )}
-
-          {/* ── Partner 2 column — sunflower gold ── */}
-          {partner2 && (
-            <div className="col-span-1 h-full">
-              <PartnerColumn
-                partner={partner2}
                 locale={locale}
                 bgColor={GOLD}
                 textColor={NAVY}
                 accentColor="rgba(255,255,255,0.5)"
                 dotsColor={NAVY}
                 sunflowerColor={GOLD_DEEP}
+                emojiPlaceholder="🕊️"
+              />
+            </div>
+          )}
+
+          {/* ── Partner 2 column — Ukrainian blue (Рух) ── */}
+          {partner2 && (
+            <div className="col-span-1 h-full">
+              <PartnerColumn
+                partner={partner2}
+                locale={locale}
+                bgColor={BLUE}
+                textColor="white"
+                accentColor="rgba(255,255,255,0.15)"
+                dotsColor="white"
+                sunflowerColor="white"
                 emojiPlaceholder="🛡️"
               />
             </div>
@@ -347,7 +360,18 @@ export function LandingPage({
 
         {/* ── CTA buttons ── */}
         <div className="relative z-10 mt-12 flex flex-col sm:flex-row gap-4 items-center justify-center">
-          {/* "We Need Help" — Ukrainian blue */}
+          {/* "I Want to Help" — gold (first) */}
+          <button
+            onClick={onDonorBrowse}
+            className="w-full sm:w-auto px-10 py-4 text-base font-black rounded-full shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0"
+            style={{ backgroundColor: GOLD, color: NAVY, minWidth: 220 }}
+            onMouseEnter={e => { e.currentTarget.style.backgroundColor = GOLD_DEEP }}
+            onMouseLeave={e => { e.currentTarget.style.backgroundColor = GOLD }}
+          >
+            {t.ctaDonor}
+          </button>
+
+          {/* "We Need Help" — Ukrainian blue (second) */}
           <button
             onClick={onFamilyRegister}
             className="w-full sm:w-auto px-10 py-4 text-base font-black text-white rounded-full shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0"
@@ -356,17 +380,6 @@ export function LandingPage({
             onMouseLeave={e => { e.currentTarget.style.backgroundColor = BLUE }}
           >
             {t.ctaFamily}
-          </button>
-
-          {/* "I Want to Help" — coral */}
-          <button
-            onClick={onDonorBrowse}
-            className="w-full sm:w-auto px-10 py-4 text-base font-black text-white rounded-full shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl active:translate-y-0"
-            style={{ backgroundColor: CORAL, minWidth: 220 }}
-            onMouseEnter={e => { e.currentTarget.style.backgroundColor = CORAL_DEEP }}
-            onMouseLeave={e => { e.currentTarget.style.backgroundColor = CORAL }}
-          >
-            {t.ctaDonor}
           </button>
         </div>
 

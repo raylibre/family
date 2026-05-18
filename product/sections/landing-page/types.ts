@@ -8,6 +8,7 @@ export interface LocalizedString {
 export interface Hero {
   name: LocalizedString;
   title: LocalizedString;
+  subtitle?: LocalizedString;
   photo: string;
 }
 

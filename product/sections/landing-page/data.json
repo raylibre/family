@@ -19,6 +19,10 @@
       "uk": "Телеведучий. «Народний адвокат»",
       "en": "Televudy. «People's Advocate»"
     },
+    "subtitle": {
+      "uk": "Лідер міжнародного благодійного проєкту для дітей війни: «СІМʼЯ - СІМʼЇ»",
+      "en": "Leader of the international charitable project for children of war: «FAMILY to FAMILY»"
+    },
     "photo": "/mykhailo.jpg"
   },
   "partners": [
@@ -28,14 +32,14 @@
         "uk": "Благодійний Фонд «Постраждалі Діти Війни»",
         "en": "Charitable Foundation «Children Affected by War»"
       },
-      "logo": "/charityLogo.png",
+      "logo": "/famtofam.png",
       "url": "https://childrenofthewar.org/"
     },
     {
       "id": "uvr",
       "name": {
-        "uk": "Український Військовий Рух (УВР)",
-        "en": "Ukrainian Military Movement (UVR)"
+        "uk": "Український\nВійськовий\nРух",
+        "en": "Ukrainian Military Movement"
       },
       "logo": "/uvrLogo.png",
       "url": "https://uvr.com.ua"

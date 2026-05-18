@@ -42,7 +42,7 @@ export function AppShell({
             className="group"
           >
             <img
-              src="/famtofam.jpg"
+              src="/famtofam.png"
               alt="Family to Family"
               className="h-9 w-auto rounded-xl shadow-sm object-contain transition-opacity group-hover:opacity-75"
             />
