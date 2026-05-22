@@ -7,8 +7,6 @@ const BLUE_DEEP   = 'oklch(0.30 0.14 260)'
 const BLUE_FAINT  = 'oklch(0.95 0.025 258)'
 const GOLD        = 'oklch(0.83 0.18 88)'
 const GOLD_DEEP   = 'oklch(0.62 0.15 88)'
-const CORAL       = 'oklch(0.68 0.20 24)'
-const CORAL_DEEP  = 'oklch(0.55 0.20 24)'
 const CREAM       = 'oklch(0.985 0.012 75)'
 const NAVY        = 'oklch(0.18 0.055 261)'
 

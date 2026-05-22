@@ -49,15 +49,15 @@
       }
     },
     {
-      "id": "active",
-      "monthlyAmount": 220,
+      "id": "prisoner",
+      "monthlyAmount": 260,
       "title": {
-        "uk": "Батько зараз на передовій",
-        "en": "A parent is currently at the front line"
+        "uk": "Батько в полоні",
+        "en": "A parent is a prisoner of war"
       },
       "description": {
-        "uk": "Сім'ї, де один із батьків наразі проходить службу на нульовій лінії фронту.",
-        "en": "Families where a parent is currently deployed at the zero line."
+        "uk": "Сім'ї, де один із батьків утримується в російському полоні.",
+        "en": "Families where a parent is being held captive by Russia."
       }
     }
   ],
@@ -66,7 +66,9 @@
       "id": "family-артикульна",
       "name": "Родина Артикульна",
       "photo": "/families/артикульна.jpg",
-      "categoryId": "active",
+      "childName": "Ілля Артикульний",
+      "childAge": 1,
+      "categoryId": "died",
       "monthlyTarget": 220,
       "currentlyFunded": 0,
       "story": {
@@ -79,7 +81,9 @@
       "id": "family-дудник",
       "name": "Родина Дудник",
       "photo": "/families/дудник.jpg",
-      "categoryId": "active",
+      "childName": "Поліна Дудник",
+      "childAge": 17,
+      "categoryId": "prisoner",
       "monthlyTarget": 220,
       "currentlyFunded": 0,
       "story": {
@@ -92,7 +96,9 @@
       "id": "family-молнар",
       "name": "Родина Молнар",
       "photo": "/families/молнар.jpg",
-      "categoryId": "active",
+      "childName": "Евеліна Молнар",
+      "childAge": 11,
+      "categoryId": "died",
       "monthlyTarget": 220,
       "currentlyFunded": 0,
       "story": {
@@ -105,7 +111,9 @@
       "id": "family-турчина",
       "name": "Родина Турчина",
       "photo": "/families/турчина.jpg",
-      "categoryId": "active",
+      "childName": "Арсен Турчин",
+      "childAge": 7,
+      "categoryId": "missing",
       "monthlyTarget": 220,
       "currentlyFunded": 0,
       "story": {
@@ -118,7 +126,9 @@
       "id": "family-штанько",
       "name": "Родина Штанько",
       "photo": "/families/штанько.jpg",
-      "categoryId": "active",
+      "childName": "Даніелла Штанько",
+      "childAge": 5,
+      "categoryId": "disability",
       "monthlyTarget": 220,
       "currentlyFunded": 0,
       "story": {
@@ -131,7 +141,9 @@
       "id": "family-яресько",
       "name": "Родина Яресько",
       "photo": "/families/яресько.jpg",
-      "categoryId": "active",
+      "childName": "Анастасія Яресько",
+      "childAge": 15,
+      "categoryId": "died",
       "monthlyTarget": 220,
       "currentlyFunded": 0,
       "story": {

@@ -78,12 +78,17 @@ export function DonorBrowseRoute() {
             id: p.id,
             name: p.family_name ?? 'Родина',
             photo: p.photo_url ?? '',
+            childName: p.child_name ?? undefined,
+            childAge: p.child_age ?? undefined,
             cardNumber: p.card_number ?? undefined,
             categoryId: p.category_id,
             monthlyTarget: category?.monthlyAmount ?? 300,
             currentlyFunded: fundedByFamily[p.id] ?? 0,
             story: { uk: p.story ?? '', en: p.story ?? '' },
             needs,
+            whatsapp: p.whatsapp ?? undefined,
+            signal: p.signal ?? undefined,
+            viber: p.viber ?? undefined,
           }
         }))
       }

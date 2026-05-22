@@ -7,6 +7,7 @@ const CATEGORY_COLORS: Record<string, { solid: string; faint: string; text: stri
   disability: { solid: 'oklch(0.42 0.175 260)', faint: 'oklch(0.95 0.022 258)', text: 'oklch(0.30 0.14 260)' },
   died:       { solid: 'oklch(0.68 0.20 24)',   faint: 'oklch(0.97 0.018 28)',  text: 'oklch(0.42 0.18 24)' },
   missing:    { solid: 'oklch(0.50 0.13 205)',  faint: 'oklch(0.95 0.022 200)', text: 'oklch(0.32 0.11 200)' },
+  prisoner:   { solid: 'oklch(0.50 0.15 65)',   faint: 'oklch(0.96 0.022 65)',  text: 'oklch(0.32 0.12 65)' },
   active:     { solid: 'oklch(0.83 0.18 88)',   faint: 'oklch(0.97 0.025 85)',  text: 'oklch(0.45 0.14 88)' },
 }
 

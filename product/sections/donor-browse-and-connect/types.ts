@@ -21,12 +21,18 @@ export interface Family {
   id: string;
   name: string;
   photo: string;
+  photos?: string[];
+  childName?: string;
+  childAge?: number;
   cardNumber?: string;
   categoryId: string;
   monthlyTarget: number;
   currentlyFunded: number;
   story: LocalizedString;
   needs: FamilyNeed[];
+  whatsapp?: string;
+  signal?: string;
+  viber?: string;
 }
 
 export interface PageContent {
