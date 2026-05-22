@@ -35,6 +35,12 @@ const PALETTES: Record<string, Palette> = {
     textOnSolid: 'white',
     textOnFaint: 'oklch(0.32 0.11 200)',
   },
+  prisoner: {
+    solid:      'oklch(0.50 0.15 65)',
+    faint:      'oklch(0.96 0.022 65)',
+    textOnSolid: 'white',
+    textOnFaint: 'oklch(0.32 0.12 65)',
+  },
   active: {
     solid:      'oklch(0.83 0.18 88)',
     faint:      'oklch(0.97 0.025 85)',

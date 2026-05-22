@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import type { Family, DonorCategory, Locale, PageContent } from '@/../product/sections/donor-browse-and-connect/types'
 import { DonationJar } from './DonationJar'
 import { DonationModal } from './DonationModal'
@@ -7,12 +8,22 @@ const PALETTES: Record<string, { solid: string; faint: string; tagText: string; 
   disability: { solid: 'oklch(0.42 0.175 260)', faint: 'oklch(0.95 0.022 258)', tagText: 'oklch(0.30 0.14 260)', textOnSolid: 'white' },
   died:       { solid: 'oklch(0.68 0.20 24)',   faint: 'oklch(0.97 0.018 28)',  tagText: 'oklch(0.42 0.18 24)',  textOnSolid: 'white' },
   missing:    { solid: 'oklch(0.50 0.13 205)',  faint: 'oklch(0.95 0.022 200)', tagText: 'oklch(0.32 0.11 200)', textOnSolid: 'white' },
+  prisoner:   { solid: 'oklch(0.50 0.15 65)',   faint: 'oklch(0.96 0.022 65)',  tagText: 'oklch(0.32 0.12 65)',  textOnSolid: 'white' },
   active:     { solid: 'oklch(0.83 0.18 88)',   faint: 'oklch(0.97 0.025 85)',  tagText: 'oklch(0.45 0.14 88)',  textOnSolid: 'oklch(0.18 0.055 261)' },
 }
 const FALLBACK = { solid: 'oklch(0.42 0.175 260)', faint: 'oklch(0.95 0.022 258)', tagText: 'oklch(0.30 0.14 260)', textOnSolid: 'white' }
 
 const NAVY  = 'oklch(0.18 0.055 261)'
 const CORAL = 'oklch(0.68 0.20 24)'
+
+function ageLabel(age: number, locale: Locale): string {
+  if (locale === 'uk') {
+    if (age === 1) return 'рік'
+    if (age >= 2 && age <= 4) return 'роки'
+    return 'років'
+  }
+  return age === 1 ? 'year old' : 'years old'
+}
 
 interface FamilyCardProps {
   family: Family
@@ -23,6 +34,7 @@ interface FamilyCardProps {
 }
 
 export function FamilyCard({ family, categories, locale, content, onDonate }: FamilyCardProps) {
+  const navigate = useNavigate()
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null)
   const [imgError, setImgError] = useState(false)
   const [showModal, setShowModal] = useState(false)
@@ -37,12 +49,21 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
     ? category.title[locale].split(' ').slice(0, 4).join(' ') + (category.title[locale].split(' ').length > 4 ? '…' : '')
     : null
 
+  const displayTitle = family.childName
+    ? `${family.childName}${family.childAge != null ? `, ${family.childAge} ${ageLabel(family.childAge, locale)}` : ''}`
+    : family.name
+
   function handleDonateClick() {
     if (selectedAmount) setShowModal(true)
   }
 
   function handleConfirm(familyId: string, amount: number, note?: string) {
     onDonate?.(familyId, amount, note)
+  }
+
+  function handleOpenProfile(e: React.MouseEvent) {
+    e.stopPropagation()
+    navigate(`/family/${family.id}`, { state: { family, categories } })
   }
 
   return (
@@ -59,8 +80,11 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
           e.currentTarget.style.boxShadow = '0 2px 14px rgba(15,30,61,0.08)'
         }}
       >
-        {/* ── Photo — bleeds to card edge ── */}
-        <div className="relative h-48 flex-shrink-0 overflow-hidden">
+        {/* Photo — clickable → opens profile */}
+        <div
+          className="relative h-48 flex-shrink-0 overflow-hidden cursor-pointer"
+          onClick={handleOpenProfile}
+        >
           {imgError ? (
             <div
               className="w-full h-full flex items-center justify-center"
@@ -76,13 +100,13 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
           ) : (
             <img
               src={family.photo}
-              alt={family.name}
-              className="w-full h-full object-cover"
+              alt={displayTitle}
+              className="w-full h-full object-cover [object-position:center_15%]"
               onError={() => setImgError(true)}
             />
           )}
 
-          {/* Category badge — bottom-left overlay */}
+          {/* Category badge */}
           {categoryLabel && (
             <div
               className="absolute bottom-2 left-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold"
@@ -92,7 +116,7 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
             </div>
           )}
 
-          {/* Funding progress bar — thin strip at very bottom */}
+          {/* Funding progress bar */}
           <div
             className="absolute bottom-0 left-0 right-0 h-1"
             style={{ backgroundColor: 'rgba(255,255,255,0.35)' }}
@@ -104,17 +128,32 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
           </div>
         </div>
 
-        {/* ── Card content ── */}
+        {/* Card content */}
         <div className="flex flex-col flex-1 p-5 gap-3">
-          {/* Family name */}
-          <h3 className="font-black text-base leading-snug" style={{ color: NAVY }}>
-            {family.name}
+          {/* Child name + age */}
+          <h3
+            className="font-black text-base leading-snug cursor-pointer hover:underline"
+            style={{ color: NAVY }}
+            onClick={handleOpenProfile}
+          >
+            {displayTitle}
           </h3>
 
-          {/* Story */}
+          {/* Story excerpt */}
           <p className="text-sm leading-relaxed line-clamp-3" style={{ color: 'oklch(0.48 0.07 258)' }}>
             {family.story[locale]}
           </p>
+
+          {/* Read more */}
+          <button
+            onClick={handleOpenProfile}
+            className="text-xs font-semibold text-left transition-colors"
+            style={{ color: p.solid }}
+            onMouseEnter={e => { e.currentTarget.style.opacity = '0.7' }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = '1' }}
+          >
+            {locale === 'uk' ? 'Читати всю історію →' : 'Read full story →'}
+          </button>
 
           {/* Need tags */}
           {family.needs.length > 0 && (
@@ -134,9 +173,8 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
           {/* Divider */}
           <div className="h-px my-0.5" style={{ backgroundColor: 'oklch(0.93 0.02 258)' }} />
 
-          {/* ── Donation section ── */}
+          {/* Donation section */}
           <div className="flex flex-col items-center gap-3">
-            {/* Jar + funded/target line */}
             <div className="flex flex-col items-center gap-1">
               <DonationJar
                 pct={pct}
@@ -156,11 +194,10 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
                 className="w-full text-center py-2 rounded-full text-xs font-bold"
                 style={{ backgroundColor: 'oklch(0.93 0.10 155)', color: 'oklch(0.35 0.14 155)' }}
               >
-                ✓ Fully covered this month
+                ✓ {locale === 'uk' ? 'Повністю покрито цього місяця' : 'Fully covered this month'}
               </div>
             ) : (
               <>
-                {/* Amount buttons */}
                 <div className="flex gap-1.5 flex-wrap justify-center w-full">
                   {[10, 50].map(amt => (
                     <button
@@ -187,7 +224,6 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
                   </button>
                 </div>
 
-                {/* Donate button */}
                 <button
                   onClick={handleDonateClick}
                   disabled={!selectedAmount}
@@ -208,7 +244,6 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
         </div>
       </div>
 
-      {/* Donation modal */}
       {showModal && selectedAmount && (
         <DonationModal
           family={family}
