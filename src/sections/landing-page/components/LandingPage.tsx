@@ -148,7 +148,7 @@ function PartnerColumn({
         className="relative z-10 text-[10px] font-bold uppercase tracking-[0.18em] opacity-60 text-center"
         style={{ color: textColor }}
       >
-        Партнери проєкту
+        Учасники проєкту
       </p>
 
       {/* Logo container */}
@@ -316,9 +316,28 @@ export function LandingPage({
         <WaveDivider />
       </div>
 
+      {/* ─── OFFICIAL PARTNER STRIP ───────────────────────────────────────────── */}
+      <div
+        className="py-6 px-4 flex items-center justify-center gap-5"
+        style={{ backgroundColor: CREAM }}
+      >
+        <p
+          className="text-[11px] font-bold uppercase tracking-[0.18em] shrink-0"
+          style={{ color: 'oklch(0.55 0.07 258)' }}
+        >
+          {locale === 'uk' ? 'Офіційний партнер проєкту' : 'Official project partner'}
+        </p>
+        <div className="w-px h-6 rounded-full shrink-0" style={{ backgroundColor: 'oklch(0.87 0.03 258)' }} />
+        <img
+          src="/privatbank.png"
+          alt="PrivatBank"
+          className="h-8 w-auto object-contain"
+        />
+      </div>
+
       {/* ─── MISSION + CTAs ───────────────────────────────────────────────────── */}
       <section
-        className="relative py-16 md:py-24 px-4 text-center overflow-hidden"
+        className="relative pt-8 pb-16 md:pt-10 md:pb-24 px-4 text-center overflow-hidden"
         style={{ backgroundColor: CREAM }}
       >
         {/* Decorative sunflowers — far sides */}
@@ -328,15 +347,10 @@ export function LandingPage({
         <div className="absolute -right-10 top-1/2 -translate-y-1/2 pointer-events-none">
           <SunflowerDecor size={220} color={BLUE} opacity={0.07} />
         </div>
-        {/* Small dot cluster — center-top */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 pointer-events-none">
-          <DotGrid cols={9} rows={2} gap={16} dotSize={2} color={GOLD} opacity={0.3} />
-        </div>
-
         {/* ── Emblem-style ornament ── */}
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="h-px flex-1 max-w-[80px] rounded-full" style={{ backgroundColor: GOLD }} />
-          <SunflowerDecor size={28} color={GOLD} opacity={0.9} />
+          <img src="/famtofam.jpg" alt="Family to Family" className="w-20 h-20 rounded-full object-cover shadow-sm" />
           <div className="h-px flex-1 max-w-[80px] rounded-full" style={{ backgroundColor: GOLD }} />
         </div>
 

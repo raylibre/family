@@ -39,13 +39,31 @@ export function AppShell({
           {/* Logo */}
           <button
             onClick={onNavigateHome}
-            className="group"
+            className="group transition-opacity hover:opacity-75 flex flex-col items-start leading-none"
           >
-            <img
-              src="/famtofam.png"
-              alt="Family to Family"
-              className="h-9 w-auto rounded-xl shadow-sm object-contain transition-opacity group-hover:opacity-75"
-            />
+            <span
+              style={{
+                fontFamily: "'Lora', Georgia, serif",
+                fontWeight: 600,
+                fontSize: 22,
+                color: 'oklch(0.83 0.18 88)',
+                lineHeight: 1.15,
+              }}
+            >
+              Сімʼя
+            </span>
+            <span
+              style={{
+                fontFamily: "'Lora', Georgia, serif",
+                fontStyle: 'italic',
+                fontWeight: 400,
+                fontSize: 16,
+                lineHeight: 1.15,
+                color: 'oklch(0.42 0.175 260)',
+              }}
+            >
+              <span style={{ color: '#D4A017' }}>—</span> Сімʼї
+            </span>
           </button>
 
           {/* Right side */}

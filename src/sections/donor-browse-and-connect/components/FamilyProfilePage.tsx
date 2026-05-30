@@ -145,6 +145,34 @@ export function FamilyProfilePage({ family, categories, locale, onBack, onDonate
         </div>
       </div>
 
+      {/* Photo gallery */}
+      {family.photos && family.photos.length > 0 && (
+        <div className="flex flex-col gap-3">
+          <h2 className="text-lg font-black" style={{ color: NAVY }}>
+            {locale === 'uk' ? 'Фотографії' : 'Photos'}
+          </h2>
+          <div
+            className="flex gap-3 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden"
+            style={{ scrollSnapType: 'x mandatory', scrollbarWidth: 'none' } as React.CSSProperties}
+          >
+            {family.photos.map((src, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 rounded-xl overflow-hidden"
+                style={{ width: 200, height: 240, scrollSnapAlign: 'start' } as React.CSSProperties}
+              >
+                <img
+                  src={src}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Divider */}
       <div className="h-px" style={{ backgroundColor: 'oklch(0.91 0.02 258)' }} />
 

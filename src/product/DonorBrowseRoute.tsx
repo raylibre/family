@@ -93,7 +93,7 @@ export function DonorBrowseRoute() {
         }))
       }
     } catch {
-      setError('Не вдалося завантажити дані. Спробуйте ще раз.')
+      setFamilies(data.families as Family[])
     } finally {
       setLoading(false)
     }

@@ -53,6 +53,17 @@
         "uk": "Сім'ї, де один із батьків наразі проходить службу на нульовій лінії фронту.",
         "en": "Families where a parent is currently deployed at the zero line."
       }
+    },
+    {
+      "id": "prisoner",
+      "title": {
+        "uk": "Батько в полоні",
+        "en": "A parent is a prisoner of war"
+      },
+      "description": {
+        "uk": "Сім'ї, де один із батьків утримується в російському полоні.",
+        "en": "Families where a parent is being held captive by Russia."
+      }
     }
   ],
   "uvrInfo": {
