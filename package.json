@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "import:families": "node scripts/import-families.mjs"
+    "import:families": "node scripts/import-families.mjs",
+    "import:families:v2": "node scripts/import-families-v2.mjs"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",

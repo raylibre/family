@@ -23,18 +23,9 @@
       "uk": "Лідер міжнародного благодійного проєкту для дітей війни: «СІМʼЯ - СІМʼЇ»",
       "en": "Leader of the international charitable project for children of war: «FAMILY to FAMILY»"
     },
-    "photo": "/mykhailo.jpg"
+    "photo": "/mykhailo_main.jpg"
   },
   "partners": [
-    {
-      "id": "children-victims",
-      "name": {
-        "uk": "Благодійний Фонд «Постраждалі Діти Війни»",
-        "en": "Charitable Foundation «Children Affected by War»"
-      },
-      "logo": "/famtofam.png",
-      "url": "https://childrenofthewar.org/"
-    },
     {
       "id": "uvr",
       "name": {
@@ -43,12 +34,21 @@
       },
       "logo": "/uvrLogo.png",
       "url": "https://uvr.com.ua"
+    },
+    {
+      "id": "children-victims",
+      "name": {
+        "uk": "Благодійний Фонд «Постраждалі Діти Війни»",
+        "en": "Charitable Foundation «Children Affected by War»"
+      },
+      "logo": "/charityLogo.png",
+      "url": "https://childrenofthewar.org/"
     }
   ],
   "content": {
     "uk": {
-      "missionLine1": "Програма «Сімʼя - Сімʼї» допомагає дітям захисників України,",
-      "missionLine2": "чиї батьки загинули, пропали безвісти або отримали інвалідність на фронті.",
+      "missionLine1": "Міжнародний гуманітарний проєкт «Сімʼя - Сімʼї» — допомагає постраждалим дітям війни, чиї батьки загинули, зникли безвісти, отримали інвалідність на фронті або знаходяться в полоні.",
+      "missionLine2": "",
       "ctaFamily": "Нам потрібна допомога",
       "ctaDonor": "Я хочу допомогти",
       "languageToggle": "EN"

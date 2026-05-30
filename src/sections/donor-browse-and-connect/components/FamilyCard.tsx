@@ -101,6 +101,7 @@ export function FamilyCard({ family, categories, locale, content, onDonate }: Fa
             <img
               src={family.photo}
               alt={displayTitle}
+              loading="lazy"
               className="w-full h-full object-cover [object-position:center_15%]"
               onError={() => setImgError(true)}
             />
